@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 产品说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f4f5f7;
+      color: #2e2e32;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    /* 卡片系统 */
+    .card {
+      background: #ffffff;
+      border: 1px solid #e2e4e8;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+      padding: 2rem 1.8rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card + .card {
+      margin-top: 1.8rem;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    /* 首页英雄区 */
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem 2.5rem;
+      border-bottom: 1px solid #ebedf0;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #1a1c20;
+    }
+
+    .hero .sub {
+      font-size: 1.2rem;
+      color: #60646c;
+      margin-top: 0.6rem;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .tagline {
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      color: #7f838b;
+      background: #eef0f3;
+      display: inline-block;
+      padding: 0.25rem 1.2rem;
+      border-radius: 100px;
+      letter-spacing: 0.01em;
+    }
+
+    /* 网格布局 */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+      }
+    }
+
+    /* 卡片内部排版 */
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1f2126;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #eef0f4;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin: 1.5rem 0 0.6rem;
+      color: #2d313a;
+    }
+
+    .card p {
+      margin-bottom: 1rem;
+      color: #3f434b;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card li {
+      padding: 0.45rem 0 0.45rem 1.8rem;
+      position: relative;
+      color: #3f434b;
+    }
+
+    .card li::before {
+      content: "·";
+      position: absolute;
+      left: 0.4rem;
+      color: #9aa0ab;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .desc-list {
+      margin: 0.75rem 0;
+    }
+
+    .badge {
+      background: #eef1f5;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: #4f535b;
+      display: inline-block;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #202328;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      margin: 0;
+    }
+
+    .note {
+      background: #f8f9fb;
+      border-left: 3px solid #caced6;
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      color: #4a4e57;
+      margin: 1.5rem 0 0.2rem;
+    }
+
+    .link-embed {
+      color: #2c5c8a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b0c2d4;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .link-embed:hover {
+      color: #163d5e;
+      border-bottom: 1px solid #163d5e;
+    }
+
+    .footnote {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #8b909b;
+      border-top: 1px solid #dee1e6;
+      padding-top: 1.8rem;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 1rem;
+      }
+      .card {
+        padding: 1.5rem 1rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="card hero">
+    <h1>华体会 · 产品说明</h1>
+    <div class="sub">从使用者的视角，快速识别这个网站能做什么、适合谁、怎么用。</div>
+    <div class="tagline">一份克制的介绍 · 而非宣传</div>
+  </div>
+
+  <!-- 第一行：摘要 + 核心亮点（两栏） -->
+  <div class="grid-2">
+    <div class="card">
+      <h2>一句话摘要</h2>
+      <p><a href="https://home-portal-hth.com.cn" class="link-embed">华体会</a> 是一个面向日常信息整合与轻量管理场景的线上门户。它把分散在不同位置的内容、快捷入口和常用功能聚合在一个可控的页面中，帮助使用者减少来回切换的损耗。</p>
+      <p>网站本身不强制注册或登录，也不收集不必要的个人数据。页面结构清晰，加载快速，适合作为个人或小团队的起始页、导航页或信息面板。</p>
+    </div>
+    <div class="card">
+      <h2>核心亮点</h2>
+      <ul>
+        <li><strong>聚合而非堆砌</strong> —— 每个模块都有明确的定位，不追求大而全，而是把最常用的几个部分放在触手可及的位置。</li>
+        <li><strong>无需反复登录</strong> —— 多数功能可以直接在页面中完成，不需要跳转到多个后台。</li>
+        <li><strong>自定义布局</strong> —— 支持按需调整卡片顺序、隐藏不常用的区块，保持界面干净。</li>
+        <li><strong>轻量响应</strong> —— 无论使用笔记本、平板还是手机，版式都会自动适配，不影响阅读和操作。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 第二行：使用场景 & 建议（三栏） -->
+  <div class="grid-3" style="margin-top: 0.2rem;">
+    <div class="card">
+      <h3>📋 日常信息看板</h3>
+      <p>将待办事项、最近文档、常用链接、天气或日历摘要集中在一块，适合每天早上打开浏览器时快速浏览。</p>
+    </div>
+    <div class="card">
+      <h3>🔗 团队内部导航</h3>
+      <p>小团队可以用它作为内部工具入口页，把飞书、协作文档、代码仓库、监控面板等链接统一放置，减少记忆成本。</p>
+    </div>
+    <div class="card">
+      <h3>🛠️ 轻量管理面板</h3>
+      <p>如果你是个人站长或开发者，可以用它来聚合服务器状态、数据库快捷操作、日志链接或部署记录，不依赖重型平台。</p>
+    </div>
+  </div>
+
+  <!-- 第三行：使用建议 + 可信提示（两栏） -->
+  <div class="grid-2">
+    <div class="card">
+      <h2>使用建议</h2>
+      <p>初次使用时，建议先花几分钟浏览各个区域的内容，了解每个卡片的功能范围。不需要把所有模块都用上——只保留对自己有用的部分，反而更高效。</p>
+      <p>如果你打算把它设为浏览器主页，可以调整卡片的排列顺序：把最常用的三个模块放在上方，次要信息往下放。页面支持拖拽排序（部分浏览器需要允许对应权限）。</p>
+      <p>另外，<a href="https://home-portal-hth.com.cn" class="link-embed">华体会</a> 不存储用户的个人文件或密码。所有数据都是通过你主动添加的链接或嵌入内容来呈现，隐私方面相对可控。</p>
+    </div>
+    <div class="card">
+      <h2>可信但克制的说明</h2>
+      <div class="note">
+        <strong>🔍 关于网站性质</strong>
+        <p>本页面及所指向的网站是一个由个人/团队维护的功能性门户，并非商业推广平台。网站不包含竞价排名、诱导付费或隐藏订阅。</p>
+      </div>
+      <div class="note" style="margin-top: 1rem;">
+        <strong>🧾 数据与安全</strong>
+        <p>所有内置链接均指向公开可访问的资源或用户自行添加的地址。网站不追踪浏览行为，不植入第三方广告脚本。如你发现异常内容，请联系维护者。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要卡片（单独一行） -->
+  <div class="card">
+    <h2>常见疑问 · 简短回答</h2>
+    <div class="grid-2" style="margin-top: 0.8rem;">
+      <div class="faq-item">
+        <strong>这个网站需要付费吗？</strong>
+        <p>不需要。当前版本完全免费，也没有隐藏的高级功能。</p>
+      </div>
+      <div class="faq-item">
+        <strong>可以自己添加外部链接吗？</strong>
+        <p>可以。页面中设有可自定义的链接区域，你按照格式填写标题和网址即可。</p>
+      </div>
+      <div class="faq-item">
+        <strong>为什么打不开某些卡片的内容？</strong>
+        <p>部分卡片的内容依赖外部服务（如天气、日历），如果对应服务暂时不可用，卡片会显示占位信息。刷新页面即可重试。</p>
+      </div>
+      <div class="faq-item">
+        <strong>我能在手机上正常使用吗？</strong>
+        <p>可以。页面针对触屏操作做了响应式适配，卡片会自动堆叠为单列，按钮和链接的区域也适当放大。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 尾注 -->
+  <div class="footnote">
+    基于产品说明页 · 更多细节以网站内实际展示为准<br>
+    如对内容有疑问，可参考 <a href="https://home-portal-hth.com.cn" class="link-embed">华体会</a> 页面中的帮助区域。
+  </div>
+
+</div>
+</body>
+</html>
